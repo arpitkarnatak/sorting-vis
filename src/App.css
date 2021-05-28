@@ -3,10 +3,19 @@
 }
 
 .block{
-  background-color: #16180c;
-  color: aliceblue;
+  background-color: #2176ff;
   margin: 1.5px;
   min-width: 6px;
+}
+
+button{
+  color: #eefbfb;
+  background-image: linear-gradient(90deg,#4da8da, #007cc7);
+  border: 5px;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 10px;
+  max-width:300px;
 }
 
 .outer-div{
@@ -16,11 +25,11 @@
 }
 
 .blocks-div{
-  background-color: rgb(153, 192, 226);
+  background-color: #203647;
   margin-top: 100px;
   width: 100%;
-  height: 500px;
-  bottom: 20%;
+  height: 400px;
+  bottom: 10%;
   position: fixed;
   display: flex;
   flex-direction: row;
