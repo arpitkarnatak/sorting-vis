@@ -16,22 +16,10 @@ function App() {
     return test_array
   }
 
-  
+  useEffect(() => {
+    setArray(generateRandomArray(SliderValue))
+  }, [SliderValue])
 
-  var indents = (num) =>{
-    let arr = []
-    let x = generateRandomArray(num)
-    if (num < 40){
-      for(let i=0; i< num; i++){
-        arr = [...arr,<div className='block' style={{"height":x[i], width: (800-5*(num))/num}} id={"block-"+i.toString()}>{x[i]}</div>]
-      }
-    }else{
-      for(let i=0; i< num; i++){
-        arr = [...arr,<div className='block' style={{"height":x[i], width: (800-5*(num))/num}} id={"block-"+i.toString()}>{}</div>]
-      }
-    }
-    return arr
-  }
 
 
   return (
@@ -40,7 +28,16 @@ function App() {
       {SliderValue}
       <div className= 'outer-div'>
           <div className="blocks-div">
-            {indents(SliderValue)}
+
+
+            {SliderValue<28 ? Array.map((i)=>
+            <div className='block' style={{"height":i, width: (800-5*(SliderValue))/SliderValue}} id={"block-"+i.toString()}>{i}</div>) :
+            Array.map((i)=>
+            <div className='block' style={{"height":i, width: (800-5*(SliderValue))/SliderValue}} id={"block-"+i.toString()}></div>)}
+
+
+            
+
           </div>
       </div>
     </div>
