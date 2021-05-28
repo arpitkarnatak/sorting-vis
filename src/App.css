@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color:
 }
 
 .block{
@@ -18,10 +19,15 @@ button{
   max-width:300px;
 }
 
+.slider_length{
+  color: #203647
+}
+
 .outer-div{
   display: flex;
   width: 80%;
   align-items: center;
+  background-color: #203647;
 }
 
 .blocks-div{
