@@ -4,6 +4,7 @@ import sleep from './sleep'
 
 
 const merge = async (arr, l, mid, r) =>{
+    
     const ll = l
     const rr = r
     var ans = arr.slice(ll, rr).sort()
@@ -29,6 +30,8 @@ const merge = async (arr, l, mid, r) =>{
 }
 
 const mergeSort = async (arr, l, r, size) => {
+    
+    document.getElementById('myRange').disabled = true
     if(l>r || l===r-1){
         return;
     }
@@ -42,6 +45,8 @@ const mergeSort = async (arr, l, r, size) => {
             document.getElementById('block-'+i.toString()).style.backgroundColor = colors.ColorDone
             await sleep()
         }
+        
+    document.getElementById('myRange').disabled = false
         
     }
 }
