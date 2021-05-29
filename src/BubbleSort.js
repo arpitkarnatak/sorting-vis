@@ -2,6 +2,7 @@ import colors from './ColorScheme'
 import sleep from './sleep'
 
 const BubbleSort =  async (arr) =>{
+    document.getElementById('myRange').disabled = true
     for(var i = 0; i < arr.length; i++){
       for(var j = 0; j < arr.length-1-i; j++){
         var p = document.getElementById('block-'+j.toString())
@@ -29,6 +30,8 @@ const BubbleSort =  async (arr) =>{
       p.style.backgroundColor = colors.ColorDone
       await sleep()
     }
+    
+    document.getElementById('myRange').disabled = false
   }
 
 export default BubbleSort

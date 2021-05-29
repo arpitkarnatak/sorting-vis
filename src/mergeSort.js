@@ -42,6 +42,7 @@ const mergeSort = async (arr, l, r, size) => {
             document.getElementById('block-'+i.toString()).style.backgroundColor = colors.ColorDone
             await sleep()
         }
+        
     }
 }
 

@@ -40,3 +40,36 @@ button{
   align-items:flex-end;
   justify-content: center;
 }
+
+.arpit{
+  margin: 0;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  transition: 0.4s;
+  filter: grayscale(100%); 
+}
+
+.arpit:hover {
+  border-radius: 5%;
+  transform: scale(1.25);
+  filter: grayscale(0%); 
+}
+
+.heads{
+  color:#eefbfb
+}
+
+
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+            border-radius: 50%;
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+            border-radius: 5%;
+  }
+}
