@@ -27,7 +27,7 @@ const BubbleSort =  async (arr) =>{
     for(i=0;i<arr.length;i++){
       p = document.getElementById('block-'+i.toString())
       p.style.backgroundColor = colors.ColorDone
-      await sleep(50)
+      await sleep()
     }
   }
 

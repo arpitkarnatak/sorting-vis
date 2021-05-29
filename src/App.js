@@ -1,22 +1,24 @@
 import {useEffect, useState} from 'react'
 import './App.css';
 import BubbleSort from "./BubbleSort"
+import {mergeSort, merge} from './mergeSort'
+
+function generateRandomArray(nums) {
+  let test_array = []
+  for(let i=0;i<nums;i++){
+    test_array = [...test_array, Math.floor(Math.random() * (300 - 20 + 1) + 100)]
+  }
+  return test_array
+}
 
 function App() {
 
 
   const [SliderValue, setSliderValue] = useState(1)
   const [Array, setArray] = useState([])
-  const [Width, setWidth] = useState(800)
+  const [Width, setWidth] = useState(100)
 
-   function generateRandomArray(nums) {
-    let test_array = []
-    for(let i=0;i<nums;i++){
-      test_array = [...test_array, Math.floor(Math.random() * (300 - 20 + 1) + 100)]
-    }
-    return test_array
-  }
-
+   
   useEffect(() => {
     setArray(generateRandomArray(SliderValue))
     setWidth((800-5*(SliderValue))/SliderValue)
@@ -31,8 +33,9 @@ function App() {
 
       <div className="Header">
 
-      <input className='slider-length' type="range" min="1" max="80" value={SliderValue} onChange={(e)=>setSliderValue(e.target.value)} class="slider" id="myRange"></input>
+      <input className='slider-length' type="range" min="1" max="100" value={SliderValue} onChange={(e)=>setSliderValue(e.target.value)} class="slider" id="myRange"></input>
       <button onClick={()=>BubbleSort(Array)}>Bubble Sort</button>
+      <button onClick={()=>mergeSort(Array,0,Array.length, parseInt(SliderValue))}>Merge Sort</button>
 
 
       </div>
