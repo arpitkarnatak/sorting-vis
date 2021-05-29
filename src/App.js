@@ -24,7 +24,7 @@ function App() {
       document.getElementById('block-'+i.toString()).style.backgroundColor = '#2176ff'
     }
   }, [SliderValue])
-  
+
 
   return (
     <div className="App">
@@ -33,7 +33,6 @@ function App() {
 
       <input className='slider-length' type="range" min="1" max="80" value={SliderValue} onChange={(e)=>setSliderValue(e.target.value)} class="slider" id="myRange"></input>
       <button onClick={()=>BubbleSort(Array)}>Bubble Sort</button>
-      {/*<button onClick={()=>quickSort(Array)}>Quick Sort</button> */}
 
 
       </div>
@@ -46,7 +45,6 @@ function App() {
             <div className='block' style={{"height":i, width: Width}} id={"block-"+index.toString()}></div>)}
           </div>
       </div>
-
 
     </div>
   );

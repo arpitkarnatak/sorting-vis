@@ -8,7 +8,7 @@ const BubbleSort =  async (arr) =>{
         var q = document.getElementById('block-'+(j+1).toString())
         p.style.backgroundColor = colors.ColorSelect
         q.style.backgroundColor = colors.ColorSelect
-        await sleep(50)
+        await sleep()
 
         if (p.style.height > q.style.height){
           p.style.backgroundColor = colors.ColorSwap
@@ -16,12 +16,12 @@ const BubbleSort =  async (arr) =>{
           var temp = p.style.height;
           p.style.height = q.style.height;
           q.style.height  = temp
-          await sleep(50)
+          await sleep()
         }
 
         p.style.backgroundColor = colors.ColorUnselect
         q.style.backgroundColor = colors.ColorUnselect
-        await sleep(50)
+        await sleep()
       }
     }
     for(i=0;i<arr.length;i++){
