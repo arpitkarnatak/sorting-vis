@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import './App.css';
 import BubbleSort from "./BubbleSort"
 import {mergeSort} from './mergeSort'
+import insertionSort from './InsertionSort'
 
 function generateRandomArray(nums) {
   let test_array = []
@@ -35,7 +36,7 @@ function App() {
       <input className='slider-length' type="range" min="1" max="100" value={SliderValue} onChange={(e)=>setSliderValue(e.target.value)}  id="myRange"></input>
       <button onClick={()=>BubbleSort(Array)}>Bubble Sort</button>
       <button onClick={()=>mergeSort(Array,0,Array.length, parseInt(SliderValue))}>Merge Sort</button>
-      
+      <button onClick={()=>insertionSort(Array)}>Insertion Sort</button>
 
 
       </div>
@@ -48,10 +49,6 @@ function App() {
             <div key={index.toString()} className='block' style={{"height":i, width: Width}} id= {"block-"+index.toString()}></div>)}
           </div>
       </div>
-
-      <h3 className='heads'>About the Developer</h3>
-
-      <img src='https://www.dscommunity.in/static/media/arpit.aa32c9c3.jpg' alt="" className='arpit'></img>
 
     </div>
   );

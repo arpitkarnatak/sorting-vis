@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column
 }
 
 .block{
@@ -54,11 +57,9 @@ button{
   border-radius: 5%;
   transform: scale(1.25);
   filter: grayscale(0%); 
+  bottom: 3%;
 }
 
-.heads{
-  color:#eefbfb
-}
 
 
 @keyframes scale-up-center {
@@ -72,4 +73,13 @@ button{
             transform: scale(1.2);
             border-radius: 5%;
   }
+}
+
+.heads{
+  max-width: 20%;
+  color: #eefbfb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
 }

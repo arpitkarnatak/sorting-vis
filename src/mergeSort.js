@@ -12,7 +12,7 @@ const merge = async (arr, l, mid, r) =>{
 
     while(l<=mid && mid+1 < r){
         document.getElementById('block-'+l.toString()).style.backgroundColor = colors.ColorSelect
-        document.getElementById('block-'+(mid+1).toString()).style.backgroundColor = colors.ColorSelect
+        document.getElementById('block-'+(mid+1).toString()).style.backgroundColor = colors.ColorSwap
         await sleep()
         document.getElementById('block-'+l.toString()).style.backgroundColor = colors.ColorUnselect
         document.getElementById('block-'+(mid+1).toString()).style.backgroundColor = colors.ColorUnselect
@@ -30,7 +30,7 @@ const merge = async (arr, l, mid, r) =>{
     }
 
     while(l<=mm){
-        document.getElementById('block-'+l.toString()).style.backgroundColor = colors.ColorSelect
+        document.getElementById('block-'+l.toString()).style.backgroundColor = colors.ColorSwap
         await sleep()
         document.getElementById('block-'+l.toString()).style.backgroundColor = colors.ColorUnselect
         await sleep()
@@ -40,15 +40,6 @@ const merge = async (arr, l, mid, r) =>{
     for(let i = ll; i < rr; i++ ){
         document.getElementById('block-'+i.toString()).style.height = `${ans[i-ll]}px`
         await sleep()
-    }
-
-    for(let i=ll;i<rr;i++){
-        document.getElementById('block-'+i.toString()).style.backgroundColor = colors.ColorDone
-        await sleep()
-    }
-    await sleep()
-    for(let i=ll;i<rr;i++){
-        document.getElementById('block-'+i.toString()).style.backgroundColor = colors.ColorUnselect
     }
 
     
