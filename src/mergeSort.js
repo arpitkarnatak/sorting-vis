@@ -7,6 +7,7 @@ const merge = async (arr, l, mid, r) =>{
     
     const ll = l
     const rr = r
+    const mm = mid
     var ans = arr.slice(ll, rr).sort()
 
     while(l<=mid && mid+1 < r){
@@ -18,12 +19,36 @@ const merge = async (arr, l, mid, r) =>{
         await sleep()
         l++;
         mid++;
+    }
 
+    while(mid+1 < r){
+        document.getElementById('block-'+(mid+1).toString()).style.backgroundColor = colors.ColorSelect
+        await sleep()
+        document.getElementById('block-'+(mid+1).toString()).style.backgroundColor = colors.ColorUnselect
+        await sleep()
+        mid++;
+    }
+
+    while(l<=mm){
+        document.getElementById('block-'+l.toString()).style.backgroundColor = colors.ColorSelect
+        await sleep()
+        document.getElementById('block-'+l.toString()).style.backgroundColor = colors.ColorUnselect
+        await sleep()
+        l++;
     }
 
     for(let i = ll; i < rr; i++ ){
         document.getElementById('block-'+i.toString()).style.height = `${ans[i-ll]}px`
         await sleep()
+    }
+
+    for(let i=ll;i<rr;i++){
+        document.getElementById('block-'+i.toString()).style.backgroundColor = colors.ColorDone
+        await sleep()
+    }
+    await sleep()
+    for(let i=ll;i<rr;i++){
+        document.getElementById('block-'+i.toString()).style.backgroundColor = colors.ColorUnselect
     }
 
     

@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import './App.css';
 import BubbleSort from "./BubbleSort"
-import {mergeSort, merge} from './mergeSort'
+import {mergeSort} from './mergeSort'
 
 function generateRandomArray(nums) {
   let test_array = []
@@ -14,25 +14,25 @@ function generateRandomArray(nums) {
 function App() {
 
 
-  const [SliderValue, setSliderValue] = useState(1)
-  const [Array, setArray] = useState([])
+  const [SliderValue, setSliderValue] = useState(Math.random()*100)
+  const [Array, setArray] = useState([1])
   const [Width, setWidth] = useState(100)
 
    
   useEffect(() => {
     setArray(generateRandomArray(SliderValue))
     setWidth((800-5*(SliderValue))/SliderValue)
+    
     for(let i=0;i<Array.length;i++){
       document.getElementById('block-'+i.toString()).style.backgroundColor = '#2176ff'
     }
   }, [SliderValue])
 
-
   return (
     <div className="App">
 
       <div className="Header">
-      <input className='slider-length' type="range" min="1" max="100" value={SliderValue} onChange={(e)=>setSliderValue(e.target.value)} class="slider" id="myRange"></input>
+      <input className='slider-length' type="range" min="1" max="100" value={SliderValue} onChange={(e)=>setSliderValue(e.target.value)}  id="myRange"></input>
       <button onClick={()=>BubbleSort(Array)}>Bubble Sort</button>
       <button onClick={()=>mergeSort(Array,0,Array.length, parseInt(SliderValue))}>Merge Sort</button>
       
@@ -45,7 +45,7 @@ function App() {
       <div className= 'outer-div'>
           <div className="blocks-div">
             {Array.map((i, index)=>
-            <div className='block' style={{"height":i, width: Width}} id={"block-"+index.toString()}></div>)}
+            <div key={index.toString()} className='block' style={{"height":i, width: Width}} id= {"block-"+index.toString()}></div>)}
           </div>
       </div>
 
