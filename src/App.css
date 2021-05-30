@@ -5,10 +5,20 @@
   flex-direction: column
 }
 
+h2{
+  margin-bottom: 20px;
+  color: #eefbfb
+}
+
+.Header{
+  height: 20%
+}
+
 .block{
   background-color: #2176ff;
   margin: 1.5px;
   min-width: 6px;
+  margin-bottom: 3px;
 }
 
 button{

@@ -32,13 +32,13 @@ function App() {
   return (
     <div className="App">
 
+      <h2>Sorting Algorithm Visualizer</h2>
+
       <div className="Header">
-      <input className='slider-length' type="range" min="1" max="100" value={SliderValue} onChange={(e)=>setSliderValue(e.target.value)}  id="myRange"></input>
-      <button onClick={()=>BubbleSort(Array)}>Bubble Sort</button>
-      <button onClick={()=>mergeSort(Array,0,Array.length, parseInt(SliderValue))}>Merge Sort</button>
-      <button onClick={()=>insertionSort(Array)}>Insertion Sort</button>
-
-
+        <input className='slider-length' type="range" min="1" max="100" value={SliderValue} onChange={(e)=>setSliderValue(e.target.value)}  id="myRange"></input>
+        <button onClick={()=>BubbleSort(Array)}>Bubble Sort</button>
+        <button onClick={()=>mergeSort(Array,0,Array.length, parseInt(SliderValue))}>Merge Sort</button>
+        <button onClick={()=>insertionSort(Array)}>Insertion Sort</button>
       </div>
 
 
