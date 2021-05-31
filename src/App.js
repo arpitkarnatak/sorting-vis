@@ -15,9 +15,9 @@ function generateRandomArray(nums) {
 function App() {
 
 
-  const [SliderValue, setSliderValue] = useState(Math.random()*100)
+  const [SliderValue, setSliderValue] = useState(Math.random()*30)
   const [Array, setArray] = useState([1])
-  const [Width, setWidth] = useState(100)
+  const [Width, setWidth] = useState(10)
 
    
   useEffect(() => {
@@ -35,7 +35,7 @@ function App() {
       <h2>Sorting Algorithm Visualizer</h2>
 
       <div className="Header">
-        <input className='slider-length' type="range" min="1" max="100" value={SliderValue} onChange={(e)=>setSliderValue(e.target.value)}  id="myRange"></input>
+        <input className='slider-length' type="range" min="1" max={Math.min('100', parseInt(window.innerWidth/9))} value={SliderValue} onChange={(e)=>setSliderValue(e.target.value)}  id="myRange"></input>
         <button onClick={()=>BubbleSort(Array)}>Bubble Sort</button>
         <button onClick={()=>mergeSort(Array,0,Array.length, parseInt(SliderValue))}>Merge Sort</button>
         <button onClick={()=>insertionSort(Array)}>Insertion Sort</button>

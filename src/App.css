@@ -41,7 +41,7 @@ button{
   width: 100%;
   align-items: center;
   justify-content: center;
-  background-color: #cfcfcf !important;
+  background-color: #cfcfcf repeat !important;
 }
 
 .blocks-div{
