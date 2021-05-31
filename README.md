@@ -6,7 +6,7 @@ This is a Sorting Algorithm Visualizer, built using React. It currently supports
 
 ### How the visualization works
 
-Let's take the example of Insertion sort. A function for insertion sort would look like -
+Let's take the example of Insertion sort. A function for bubble sort would look like -
 
 ```
 for(i = 0; i< arr.length ; i++)
