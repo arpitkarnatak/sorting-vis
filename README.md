@@ -38,4 +38,27 @@ for(i = 0; i< arr.length ; i++){
 }
 ```
 
-We can also add colors in a similar manner.
+We can also add colors in a similar manner. Add the following lines
+```
+for(i = 0; i< arr.length ; i++){
+  for(j = 0; j<arr.length-1-i ; j++){
+    p = document.getElementById('block-' + j.toString());      
+    q = document.getElementById('block-' + (j+1).toString());  
+    
+    p.style.backgroundColor = 'red';                           // Change background color of bar with height arr[j]
+    q.style.backgroundColor = 'red';                           // Change background color of bar with height arr[j+1]
+    await sleep()                                              // A sleep function for delaying the execution of further instructions(sleep.js in /src). setTimeout() works too
+    
+    if (p.style.height > q.style.height){                      //Comparing heights and swapping
+      let temp = p.style.height;
+      p.style.height = q.style.height;
+      q.style.height = temp;
+    }
+    
+    p.style.backgroundColor = 'blue';                           // Change background color of bar to original color
+    q.style.backgroundColor = 'blue';                           // Change background color of bar to original color
+    
+}
+```
+
+
